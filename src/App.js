@@ -5,8 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { HashRouter, useNavigate } from 'react-router-dom';
 
 function App() {
-  const muiTheme = createTheme(applicationTheme('magentaTheme', 'dark'));
-  console.log(muiTheme)
+  const muiTheme = createTheme(applicationTheme('purpleRedTheme', 'dark'));
   return (
     <div className="App">
       <ThemeProvider theme={muiTheme}>

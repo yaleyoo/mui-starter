@@ -8,8 +8,7 @@ import useStyles from './page2-jss';
 export const Page2 = () => {
     const navigate = useNavigate();
     const { user } = useSelector(state => state.user);
-    const { classes } = useStyles();
-
+    const { classes, cx } = useStyles();
     return (
         <Box className={classes.content}>
             <div className={classes.userText}> {JSON.stringify(user)} </div>

@@ -7,22 +7,22 @@ import Container from '@mui/material/Container'
 import useStyles from './router-jss';
 import Box from '@mui/material/Box';
 import { NavBar } from '../components/Navbar/NavBar';
+import Dashboard from '../dashboard/Dashboard';
 
 export const MyRouter = () => {
-    const { classes } = useStyles();
+    const { classes, theme } = useStyles();
     return (
         <div className={classes.root}>
             <NavBar />
             <Container className={classes.content}>
+                <Dashboard mode={theme.palette.mode}>
                 <Routes>
-                    <Route path="/a" element={<Outlet />}>
-                        <Route path="" element={<Page1 />}></Route>
-                    </Route>
-                    <Route path="/b" element={<Outlet />}>
-                        <Route path="" element={<Page2 />}></Route>
-                    </Route>
-                    <Route path='/' element={<Page1 />}> </Route>
+                        <Route path="/a" element={<Page1 />}>
+                        </Route>
+                        <Route path="/b" element={<Page2 />}>
+                        </Route>
                 </Routes>
+                </Dashboard>
             </Container>
         </div>
     )
